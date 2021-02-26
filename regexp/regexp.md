@@ -57,12 +57,18 @@ console.log(/^.+$/.test(str)); // false
 ```
 
 ## 元字符
-元字符包括： \\, \d, \D, \w, \W, \s, \S, \n, \r, \t, \v, \f, [\b], \0, \xhh, \uhhhh, \u{hhhh}或者\u{hhhhh} 
+元字符包括： \\, \d, \D, \w, \W, \s, \S, \n, \r, \t, \v, \f, [\b], \0, \xhh, \uhhhh, \u{hhhhh}
 ### \\-转义符号
 正则表达式中需要转义的符号有:
 
 &, (), *, +, ., [], ?, \\, ^, {}, |
 
+### unicode编码
+\xhh, 匹配U+0000 - U+00FF,  hexadecimal escape sequences
+
+\uhhhh, 匹配BMP(Basic Multilingual Plane)字符，U+0000-U+FFFF,  Unicode escape sequences.
+
+\u{hhhh}或者\u{hhhhh}, 前者和\uhhhh一样，后者匹配Astral code points字符，表示U+010000-U+10FFFF, \u{}在pattern中必须和u模式一起用, Unicode code point escapes
 ## 断言
 断言包括： ^, $, (?=x), (?<=x), (?!x), (?<!x), \b, \B
 ### ^, $ 分别匹配字符串开始和结束位置

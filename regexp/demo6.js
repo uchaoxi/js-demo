@@ -19,3 +19,8 @@ console.log(/\u{597D}/.test('\u597D\u4F60'));// false
 console.log(/\u597D/u.test('\u597D\u4F60')); //false(这个false表明在u模式下，单个字符也不能匹配了，必须用\u{hhhh})
 console.log(/\u{D842}/u.test("\uD842\uDFB7")); //false
 console.log(/\uD842/u.test("\uD842\uDFB7")); //false
+
+// \u{hhhhh}需要和u模式一起用，否则被认为是匹配1234个u组成的字符串
+console.log(/\u{1D306}/u.test('𝌆')); // true
+console.log(/\u{1234}/.test('uuuuuuuuuuuu...uuuuuuuu'));
+console.log(/\a/u.test('a')); //Invalid regular expression: /\a/: Invalid escape

@@ -6,3 +6,7 @@
 
 console.log('    '.match(/(\s+)(\s+)/)); //[ '    ', '   ', ' ', index: 0, input: '    ', groups: undefined ]
 console.log('    '.match(/(\s+?)(\s+?)/));// [ '  ', ' ', ' ', index: 0, input: '    ', groups: undefined ]
+
+console.log(/\u{1D306}/u.test('𝌆')); // true
+console.log(/\u{1234}/.test('uuuuuuuuuuuu...uuuuuuuu'));
+console.log(/\a/u.test('a')); //Invalid regular expression: /\a/: Invalid escape

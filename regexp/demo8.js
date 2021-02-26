@@ -6,6 +6,7 @@
  * match
  * matchAll
  * replace
+ * replaceAll
  * split
  */
 
